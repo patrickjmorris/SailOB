@@ -1,0 +1,9 @@
+@function black($opacity){
+  @return rgba(0,0,0,$opacity);
+}
+@function blue($opacity){
+  @return rgba($brand-color,$opacity);
+}
+@function red($opacity){
+  @return rgba($red,$opacity);
+}
