@@ -40,6 +40,8 @@ a {
   height: 650px;
   background: url('../img/header_bg.png') center no-repeat;
   padding: ($base-spacing-unit * 3) 0;
+  @include media-query(palm){ 
+    background: url('../img/header_bg_palm.png') center no-repeat; }
   //margin-bottom: $base-spacing-unit * 3;
   > hgroup {
     margin-bottom: $base-spacing-unit * 3;
@@ -85,7 +87,7 @@ a {
   border-bottom: $brand-color solid 6px;
   margin: 0 auto;
   font-size: 1.25rem;
-  color: white;
+  color: $secondary;
   font-weight: 100;
   letter-spacing: 0.2rem;
   //text-transform: uppercase;

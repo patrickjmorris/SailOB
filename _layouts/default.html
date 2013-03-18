@@ -11,10 +11,11 @@
     <meta name="author" content="Sail Oyster Bay">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="{{ "css/production.min.css" | cdn }}" />
+    <link rel="stylesheet" type="text/css" href="css/style.min.css">
     <!--[if lte IE 9]><script src="///modernizr-2.0.6.min.js"></script><![endif]-->
-    <script type="text/javascript" src="//use.typekit.net/epi5luo.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="//use.typekit.net/ahg5djl.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   </head>
   <body id="{{ page.body_id }}" class="{% if page.is_post == true %}single{% endif %}">
     <div class="container" id="content">
@@ -26,7 +27,6 @@
       <footer>
         <ul id="footer-nav" class="nav nav--block">
           <li class="footer-li"><a href="#content">Back to top</a></li>
-          <li class="footer-li"><a href="/">Home</a></li>
           <li class="footer-li"><a href="/about-sail-oyster-bay">About</a></li>
           <li class="footer-li"><a href="/contact">Contact</a></li>
         </ul>
@@ -40,5 +40,11 @@
     <!--<script src="js/plugins.js"></script>
     <script src="js/main.js"></script> -->
     <script type="text/javascript" src="js/ss-social.js"></script>
+    <script>
+        var _gaq=[["_setAccount","UA-39369759-1"],["_trackPageview"]];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+        g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+        s.parentNode.insertBefore(g,s)}(document,"script"));
+    </script>
   </body>
 </html>
