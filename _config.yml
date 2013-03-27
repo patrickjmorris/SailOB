@@ -2,7 +2,7 @@ auto: true
 name: "Sail Oyster Bay"
 description: "Showcasing the sailing opportunities in Oyster Bay"
 
-url: "[oysterbaysailing.com]"
+url: "[www.oysterbaysailing.com]"
 
 cdn: http://cdn.oysterbaysailing.com
 markdown: rdiscount

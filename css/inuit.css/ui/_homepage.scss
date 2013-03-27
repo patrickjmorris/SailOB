@@ -81,23 +81,45 @@ a {
   background: $light-grey;
 }
 
-.button {
+/*.button {
   @extend .btn--full;
   background: lighten($brand-color, 10%);
-  border-bottom: $brand-color solid 6px;
+  //border-bottom: $brand-color solid 6px;
   margin: 0 auto;
   font-size: 1.25rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #404853;
   color: $secondary;
   font-weight: 100;
   letter-spacing: 0.2rem;
+  transition: all .1s linear;
   //text-transform: uppercase;
   font-family: "proxima-nova", sans-serif;
   padding: $half-spacing-unit;
   @include vendor(border-radius, 5px);
   &:active {
-    border-bottom: 0;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #404853;
+    transform: translateY(3px);
   }
+}
+*/
 
+
+.button{ 
+  @extend .btn--full;
+  @include vendor(border-radius, 5px);
+  @include vendor(box-shadow, 0 1px 0 rgba(255,255,255,0.15),0 5px 0 lighten($brand-color, 10%));
+  @include vendor(transition, all 0.1s linear);
+  background: $brand-color;
+  border:0;
+  font-weight:bold;
+  margin-bottom:25px;
+  padding:12px 20px;
+  text-shadow:0 -1px 0 rgba(0,0,0,0.25);
+  text-transform:uppercase;
+  &:active {
+    @include vendor(box-shadow, 0 1px 0 rgba(255,255,255,0.15),0 2px 0 lighten($brand-color, 10%));
+    @include vendor(transform, translateY(3px));
+  }
 }
 
 .bestof {
