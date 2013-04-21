@@ -6,6 +6,10 @@
 # No minification
 #sass --watch style.scss:style.css --style expanded
 
+# Source maps for the browser
+
+# sass --watch --debug-info --scss --sourcemap style.scss:style.css
+
 sass --watch style.scss:style.min.css --style compressed
 
 exit 0

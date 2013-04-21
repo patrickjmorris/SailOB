@@ -1,0 +1,2800 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    STYLE.CSS
+\*------------------------------------*/
+/**
+ * 
+ * sass --watch style.scss:style.min.css --style compressed
+ * 
+ * Here we pull in some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+/**
+ * Setup
+ */
+/*------------------------------------*\
+    $VARS
+\*------------------------------------*/
+/**
+ * Set up project-specific variables here which are then used throughout your
+ * build. These variables are automatically picked up by inuit.css so you should
+ * never need to modify any framework code.
+ */
+/**
+ * Debug mode will visually highlight any potential markup/accessibility quirks
+ * in the browser. Set to `true` or `false`.
+ */
+/**
+ * Do you want all elements to adopt `box-sizing:border-box;` as per
+ * paulirish.com/2012/box-sizing-border-box-ftw ?
+ */
+/**
+ * Would you like to use Adam Whitcroft’s Batch icon font, as per:
+ * adamwhitcroft.com/batch ?
+ */
+/**
+ * Base stuff
+ */
+/**
+ * How big would you like round corners to be by default?
+ */
+/**
+ * Responsiveness?
+ */
+/**
+ * Responsiveness for widescreen/high resolution desktop monitors and beyond?
+ * Note: $responsive parameter above must be enabled before enabling this.
+ */
+/**
+ * Responsive push and pull produce a LOT of code, only turn them on if you
+ * definitely need them.
+ */
+/**
+ * Tell inuit.css when breakpoints start.
+ */
+/**
+ * Font-sizes (in pixels). Refer to relevant sections for their implementations.
+ */
+/**
+ * English quote marks?
+ */
+/**
+ * If you want English quotes then please do not edit these; they’re only here
+ * because Sass needs them.
+ */
+/**
+ * If you need non-English quotes, please alter the following values accordingly:
+ */
+/**
+ * Brand stuff
+ */
+/**
+ * inuit.css will work these next ones out for you.
+ *
+ * Assign our `$base-line-height` to a new spacing var for more transparency.
+ */
+/*------------------------------------*\
+    INUIT.CSS
+\*------------------------------------*/
+/**
+ * 
+ * inuitcss.com -- @inuitcss -- @csswizardry
+ * 
+ */
+/**
+ * inuit.css acts as a base stylesheet which you should extend with your own
+ * theme stylesheet.
+ * 
+ * inuit.css aims to do the heavy lifting; sorting objects and abstractions,
+ * design patterns and fiddly bits of CSS, whilst leaving as much design as
+ * possible to you. inuit.css is the scaffolding to your decorator.
+ * 
+ * This stylesheet is heavily documented and contains lots of comments, please
+ * take care to read and refer to them as you build. For further support please
+ * tweet at @inuitcss.
+ * 
+ * Owing to the amount of comments please only ever use minified CSS in
+ * production. This file is purely a dev document.
+ * 
+ * The table of contents below maps to section titles of the same name, to jump
+ * to any section simply run a find for $[SECTION-TITLE].
+ * 
+ * Most objects and abstractions come with a chunk of markup that you should be
+ * able to paste into any view to quickly see how the CSS works in conjunction
+ * with the correct HTML.
+ * 
+ * inuit.css is written to this standard: github.com/csswizardry/CSS-Guidelines
+ * 
+ * LICENSE
+ * 
+ * Copyright 2012 Harry Roberts
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * Thank you for choosing inuit.css. May your floats remain cleared.
+ */
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............Here be dragons!
+ * IMPORTS.............Begin importing the sections below
+ * 
+ * MIXINS..............Super-simple Sass stuff
+ * NORMALIZE...........normalize.css
+ * RESET...............Set some defaults
+ * CLEARFIX............
+ * SHARED..............Shared declarations
+ * 
+ * MAIN................High-level elements like `html`, `body`, etc.
+ * HEADINGS............Double-stranded heading hierarchy
+ * PARAGRAPHS..........
+ * SMALLPRINT..........Smaller text elements like `small`
+ * QUOTES..............
+ * CODE................
+ * LINKS...............
+ * LISTS...............
+ * IMAGES..............
+ * TABLES..............
+ * FORMS...............
+ * 
+ * GRIDS...............Fluid, proportional and nestable grids
+ * FLEXBOX.............Crudely emulate flexbox
+ * COLUMNS.............CSS3 columns
+ * NAV.................A simple abstraction to put a list in horizontal nav mode
+ * OPTIONS.............Grouped nav items
+ * PAGINATION..........Very stripped back, basic paginator
+ * BREADCRUMB..........Simple breadcrumb trail object
+ * MEDIA...............Media object
+ * MARGINALIA..........Simple marginalia content
+ * ISLAND..............Boxed off content
+ * BLOCK-LIST..........Blocky lists of content
+ * MATRIX..............Gridded lists
+ * SPLIT...............A simple split-in-two object
+ * THIS-OR-THIS........Options object
+ * LINK-COMPLEX........
+ * FLYOUT..............Flyout-on-hover object
+ * ARROWS..............CSS arrows
+ * SPRITE..............Generic spriting element
+ * ICON-TEXT...........Icon and text couplings
+ * BUTTONS.............
+ * LOZENGES............Basic lozenge styles
+ * RULES...............Horizontal rules
+ * STATS...............Simple stats object
+ * GREYBOX.............Wireframing styles
+ * BATCH...............Batch icon font
+ * 
+ * WIDTHS..............Width classes for use alongside the grid system etc.
+ * PUSH................Push classes for manipulating grids
+ * PULL................Pull classes for manipulating grids
+ * BRAND...............Helper class to apply brand treatment to elements
+ * HELPER..............A series of helper classes to use arbitrarily
+ * DEBUG...............Enable to add visual flags for debugging purposes
+ */
+/*------------------------------------*\
+    $WARNING
+\*------------------------------------*/
+/*
+ * inuit.css, being an OO framework, works in keeping with the open/closed
+ * principle. The variables you set previously are now being used throughout
+ * inuit.css to style everything we need for a base. Any custom styles SHOULD
+ * NOT be added or modified in inuit.css directly, but added via your theme
+ * stylesheet as per the open/closed principle:
+ * 
+ * csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
+ * 
+ * Try not to edit any CSS beyond this point; if you find you need to do so
+ * it is a failing of the framework so please tweet at @inuitcss.
+ */
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+/**
+ * Generic utility styles etc.
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ * 
+   `@include font-size(10px);`
+ * 
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ * 
+   `@include vendor(border-radius, 4px);`
+ * 
+ */
+/**
+ * Create CSS keyframe animations for all vendors in one go, e.g.:
+ * 
+   .foo{
+       @include vendor(animation, shrink 3s);
+   }
+   
+   @include keyframe(shrink){
+       from{
+           font-size:5em;
+       }
+   }
+ * 
+ * Courtesy of @integralist: twitter.com/integralist/status/260484115315437569
+ */
+/**
+ * Force overly long spans of text to truncate, e.g.:
+ * 
+   `@include truncate(100%);`
+ * 
+ * Where `$truncation-boundary` is a united measurement.
+ */
+/**
+ * CSS arrows!!! But... before you read on, you might want to grab a coffee...
+ * 
+ * This mixin creates a CSS arrow on a given element. We can have the arrow
+ * appear in one of 12 locations, thus:
+ * 
+ *       01    02    03
+ *    +------------------+
+ * 12 |                  | 04
+ *    |                  |
+ * 11 |                  | 05
+ *    |                  |
+ * 10 |                  | 06
+ *    +------------------+
+ *       09    08    07
+ * 
+ * You pass this position in along with a desired arrow color and optional
+ * border color, for example:
+ * 
+ * `@include arrow(top, left, red)`
+ * 
+ * for just a single, red arrow, or:
+ * 
+ * `@include arrow(bottom, center, red, black)`
+ * 
+ * which will create a red triangle with a black border which sits at the bottom
+ * center of the element. Call the mixin thus: 
+ * 
+   .foo{
+       background-color:#BADA55;
+       border:1px solid #ACE;
+       @include arrow(top, left, #BADA55, #ACE);
+   }
+ * 
+ */
+/**
+ * Media query mixin.
+ *
+ * It’s not great practice to define solid breakpoints up-front, preferring to
+ * modify your design when it needs it, rather than assuming you’ll want a
+ * change at ‘mobile’. However, as inuit.css is required to take a hands off
+ * approach to design decisions, this is the closest we can get to baked-in
+ * responsiveness. It’s flexible enough to allow you to set your own breakpoints
+ * but solid enough to be frameworkified.
+ * 
+ * We define some broad breakpoints in our vars file that are picked up here
+ * for use in a simple media query mixin. Our options are:
+ *
+ * palm
+ * lap
+ * lap-and-up
+ * portable
+ * desk
+ * desk-wide
+ * 
+ * Not using a media query will, naturally, serve styles to all devices.
+ * 
+ * `@include media-query(palm){ [styles here] }`
+ * 
+ * We work out your end points for you:
+ */
+/* normalize.css v2.1.0 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/*
+ * Correct `block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000311}}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/*
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000330}}
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/*
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000341}}
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000350}}
+[hidden] {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/*
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000364}}
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */ }
+
+/*
+ * Remove default margin.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000374}}
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/*
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000386}}
+a:focus {
+  outline: thin dotted; }
+
+/*
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\0000394}}
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/*
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003108}}
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/*
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003117}}
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/*
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003125}}
+b,
+strong {
+  font-weight: bold; }
+
+/*
+ * Address styling not present in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003134}}
+dfn {
+  font-style: italic; }
+
+/*
+ * Address differences between Firefox and other browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003142}}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/*
+ * Address styling not present in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003152}}
+mark {
+  background: #ff0;
+  color: #000; }
+
+/*
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003161}}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/*
+ * Improve readability of pre-formatted text in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003173}}
+pre {
+  white-space: pre-wrap; }
+
+/*
+ * Set consistent quote types.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003181}}
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/*
+ * Address inconsistent and variable font size in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003189}}
+small {
+  font-size: 80%; }
+
+/*
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003197}}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003205}}
+sup {
+  top: -0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003209}}
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/*
+ * Remove border when inside `a` element in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003221}}
+img {
+  border: 0; }
+
+/*
+ * Correct overflow displayed oddly in IE 9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003229}}
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/*
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003241}}
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/*
+ * Define consistent border, margin, and padding.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003253}}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/*
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003264}}
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003275}}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/*
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003289}}
+button,
+input {
+  line-height: normal; }
+
+/*
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003301}}
+button,
+select {
+  text-transform: none; }
+
+/*
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003314}}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/*
+ * Re-set default cursor for disabled elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003326}}
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/*
+ * 1. Address box sizing set to `content-box` in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003336}}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/*
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003348}}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/*
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003360}}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/*
+ * Remove inner padding and border in Firefox 4+.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003369}}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/*
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003380}}
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/*
+ * Remove most spacing between table cells.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_normalize\.scss}line{font-family:\00003393}}
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/**
+ * A more considered reset; more of a restart... 
+ * As per: csswizardry.com/2011/10/reset-restarted
+ */
+/**
+* Let’s make the box model all nice, shall we…?
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000314}}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/**
+ * The usual...
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000325}}
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+hr {
+  margin: 0;
+  padding: 0; }
+
+/**
+ * Give a help cursor to elements that give extra info on `:hover`.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000338}}
+abbr[title], dfn[title] {
+  cursor: help; }
+
+/**
+ * Remove underlines from potentially troublesome elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000345}}
+a, u, ins {
+  text-decoration: none; }
+
+/**
+ * Apply faux underline via `border-bottom`.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000352}}
+ins {
+  border-bottom: 1px solid; }
+
+/**
+ * So that `alt` text is visually offset if images don’t load.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000359}}
+img {
+  font-style: italic; }
+
+/**
+ * Give form elements some cursor interactions...
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000366}}
+label,
+input,
+textarea,
+button,
+select,
+option {
+  cursor: pointer; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_reset\.scss}line{font-family:\0000374}}
+.text-input:active,
+.text-input:focus,
+textarea:active,
+textarea:focus {
+  cursor: text;
+  outline: none; }
+
+/*------------------------------------*\
+    $CLEARFIX
+\*------------------------------------*/
+/**
+ * Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+ * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
+ * and over in your markup.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_clearfix\.scss}line{font-family:\000039}}
+.cf, .gw,
+.grid-wrapper, .nav, .island,
+.islet {
+  zoom: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_clearfix\.scss}line{font-family:\0000312}}
+  .cf:before, .gw:before,
+  .grid-wrapper:before, .nav:before, .island:before,
+  .islet:before, .cf:after, .gw:after,
+  .grid-wrapper:after, .nav:after, .island:after,
+  .islet:after {
+    content: " ";
+    display: table; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_clearfix\.scss}line{font-family:\0000318}}
+  .cf:after, .gw:after,
+  .grid-wrapper:after, .nav:after, .island:after,
+  .islet:after {
+    clear: both; }
+
+/*------------------------------------*\
+    $SHARED
+\*------------------------------------*/
+/**
+ * Where `margin-bottom` is concerned, this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+/**
+ * Base elements
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_shared\.scss}line{font-family:\0000312}}
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre,
+.media,
+.island,
+.islet {
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_shared\.scss}line{font-family:\0000328}}
+  .islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet
+  ul, .islet ol, .islet dl, .islet
+  blockquote, .islet p, .islet address, .islet
+  table, .islet
+  fieldset, .islet figure, .islet
+  pre, .islet
+  .media, .islet
+  .island, .islet
+  .islet {
+    margin-bottom: 12px;
+    margin-bottom: 0.75rem; }
+
+/**
+ * Doubled up `margin-bottom` helper class.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_shared\.scss}line{font-family:\0000338}}
+.landmark {
+  margin-bottom: 48px;
+  margin-bottom: 3rem; }
+
+/**
+ * `hr` elements only take up a few pixels, so we need to give them special
+ * treatment regarding vertical rhythm.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_shared\.scss}line{font-family:\0000348}}
+hr {
+  margin-bottom: 22px;
+  margin-bottom: 1.375rem; }
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once, here.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_shared\.scss}line{font-family:\0000358}}
+ul, ol, dd {
+  margin-left: 48px;
+  margin-left: 3rem; }
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_main\.scss}line{font-family:\000034}}
+html {
+  font: 1em/1.5 serif;
+  overflow-y: scroll;
+  min-height: 100%; }
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ * 
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000311}}
+h1, .alpha {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1.33333; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000314}}
+h2, .beta {
+  font-size: 30px;
+  font-size: 1.875rem;
+  line-height: 1.6; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000317}}
+h3, .gamma {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000320}}
+h4, .delta {
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 1.2; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000323}}
+h5, .epsilon {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000326}}
+h6, .zeta {
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.71429; }
+
+/**
+ * Heading groups and generic any-heading class.
+ * To target any heading of any level simply apply a class of `.hN`, e.g.:
+ * 
+   <hgroup>
+       <h1 class=hN>inuit.css</h1>
+       <h2 class=hN>Best. Framework. Ever!</h2>
+   </hgroup>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000343}}
+hgroup .hN {
+  margin-bottom: 0; }
+
+/**
+ * A series of classes for setting massive type; for use in heroes, mastheads,
+ * promos, etc.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000352}}
+.giga {
+  font-size: 96px;
+  font-size: 6rem;
+  line-height: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000355}}
+.mega {
+  font-size: 72px;
+  font-size: 4.5rem;
+  line-height: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_headings\.scss}line{font-family:\0000358}}
+.kilo {
+  font-size: 48px;
+  font-size: 3rem;
+  line-height: 1; }
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/**
+ * Say no to negative hovers, as per: csswizardry.com/2011/05/on-negative-hovers
+ *
+ * Sometimes, particularly on larger projects, it is useful to scope link
+ * styling only to anchors which have `href` attributes.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_links\.scss}line{font-family:\0000310}}
+a {
+  /**
+   * Set colors etc in your theme stylesheet.
+   */ }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_links\.scss}line{font-family:\0000315}}
+  a:hover, a:active, a:focus {
+    text-decoration: underline; }
+
+/**
+ * ‘Current’ states, e.g.:
+ * 
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li class=current><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_links\.scss}line{font-family:\0000334}}
+.current > a {
+  cursor: text;
+  text-decoration: underline; }
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+/**
+ * Demo: jsfiddle.net/inuitcss/yMtur
+ */
+/**
+ * Fluid images.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000310}}
+img {
+  max-width: 100%; }
+
+/**
+ * Non-fluid images if you specify `width` and/or `height` attributes.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000318}}
+img[width],
+img[height] {
+  max-width: none; }
+
+/**
+ * Image placement variations.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000327}}
+.img--right {
+  float: right;
+  margin-bottom: 24px;
+  margin-left: 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000332}}
+.img--left {
+  float: left;
+  margin-right: 24px;
+  margin-bottom: 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000337}}
+.img--center {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 24px;
+  margin-left: auto; }
+
+/**
+ * Keep your images on your baseline.
+ * 
+ * Please note, these will not work too nicely with fluid images and will
+ * distort when resized below a certain width. Use with caution.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000351}}
+.img--short {
+  height: 120px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000354}}
+.img--medium {
+  height: 240px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000357}}
+.img--tall {
+  height: 360px; }
+
+/**
+ * Images in `figure` elements.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_images\.scss}line{font-family:\0000365}}
+figure > img {
+  display: block; }
+
+/*------------------------------------*\
+    $LISTS
+\*------------------------------------*/
+/**
+ * Remove vertical spacing from nested lists.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_lists\.scss}line{font-family:\000038}}
+li > ul,
+li > ol {
+  margin-bottom: 0; }
+
+/**
+ * Have a numbered `ul` without the semantics implied by using an `ol`.
+ */
+/*ul*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/base\/_lists\.scss}line{font-family:\0000317}}
+.numbered-list {
+  list-style-type: decimal; }
+
+/**
+ * Objects and abstractions
+ * 
+ * Single-line comment (//) out any objects you do not need in your project.
+ */
+/*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * Fluid and nestable grid system, e.g.:
+ * 
+   <div class=gw>
+       
+       <div class="g  one-third">
+           <p>One third grid</p>
+       </div>
+       
+       <div class="g  two-thirds">
+           <p>Two thirds grid</p>
+       </div>
+       
+       <div class="g  one-half">
+           <p>One half grid</p>
+       </div>
+       
+       <div class="g  one-quarter">
+           <p>One quarter grid</p>
+       </div>
+       
+       <div class="g  one-quarter">
+           <p>One quarter grid</p>
+       </div>
+       
+   </div>
+ * 
+ * Demo: jsfiddle.net/inuitcss/CLYUC
+ * 
+ */
+/**
+ * Grid wrapper
+ * 
+ * Shorthand and verbose
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_grids\.scss}line{font-family:\0000341}}
+.gw,
+.grid-wrapper {
+  /**
+   * Negative margin to negate the padding on the first grid child. 
+   */
+  margin-left: -24px;
+  /**
+   * The following declarations allow us to use the `.gw` class on lists.
+   */
+  list-style: none;
+  margin-bottom: 0; }
+
+/**
+ * Reverse grid order
+ * 
+   <div class="gw  gw--rev">
+       
+       <div class="g  one-third">
+           <p>Appears on the right</p>
+       </div>
+       
+       <div class="g  two-thirds">
+           <p>Appears on the left</p>
+       </div>
+       
+   </div>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_grids\.scss}line{font-family:\0000372}}
+.gw--rev > .g,
+.grid-wrapper--rev > .grid {
+  float: right; }
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_grids\.scss}line{font-family:\0000381}}
+.gw > .gw,
+.grid-wrapper > .grid-wrapper {
+  margin-left: 0; }
+
+/**
+ * Grid
+ * 
+ * Shorthand and verbose
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_grids\.scss}line{font-family:\0000392}}
+.g,
+.grid {
+  float: left;
+  padding-left: 24px; }
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ * 
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000319}}
+.nav {
+  list-style: none;
+  margin-left: 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000326}}
+  .nav > li,
+  .nav > li > a {
+    display: inline-block;
+    *display: inline;
+    zoom: 1; }
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ * 
+   <ul class="nav  nav--stacked">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000349}}
+.nav--stacked > li {
+  display: list-item; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000352}}
+  .nav--stacked > li > a {
+    display: block; }
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ * 
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000370}}
+.nav--banner {
+  text-align: center; }
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ * 
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000386}}
+.nav--block {
+  line-height: 1;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+  white-space: nowrap; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000395}}
+  .nav--block > li {
+    letter-spacing: normal;
+    word-spacing: normal; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\0000399}}
+    .nav--block > li > a {
+      padding: 12px; }
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ * 
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ * 
+ * Thanks to @pimpl for this idea!
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\00003119}}
+.nav--fit {
+  display: table;
+  width: 100%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\00003123}}
+  .nav--fit > li {
+    display: table-cell; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\00003126}}
+    .nav--fit > li > a {
+      display: block; }
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ * 
+   `<ul class="nav  nav--keywords>`
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\00003143}}
+.nav--keywords > li:after {
+  content: ", "; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_nav\.scss}line{font-family:\00003147}}
+.nav--keywords > li:last-child:after {
+  display: none; }
+
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ * 
+   <div class=island>
+       I am boxed off.
+   </div>
+ * 
+ * Demo: jsfiddle.net/inuitcss/u8pV3
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_island\.scss}line{font-family:\0000315}}
+.island,
+.islet {
+  display: block; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_island\.scss}line{font-family:\0000320}}
+.island {
+  padding: 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_island\.scss}line{font-family:\0000323}}
+.island > :last-child,
+.islet > :last-child {
+  margin-bottom: 0; }
+
+/**
+ * Just like `.island`, only smaller.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_island\.scss}line{font-family:\0000332}}
+.islet {
+  padding: 12px; }
+
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ * 
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+ * 
+ * Extend this object in your theme stylesheet.
+ * 
+ * Demo: jsfiddle.net/inuitcss/hR57q
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_block-list\.scss}line{font-family:\0000321}}
+.block-list, .header-box,
+.block-list > li,
+.header-box > li {
+  border: 0 solid #ccc;
+  /* Override this color in your theme stylesheet */ }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_block-list\.scss}line{font-family:\0000326}}
+.block-list, .header-box {
+  list-style: none;
+  margin-left: 0;
+  border-top-width: 1px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_block-list\.scss}line{font-family:\0000331}}
+  .block-list > li, .header-box > li {
+    border-bottom-width: 1px;
+    padding: 12px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_block-list\.scss}line{font-family:\0000336}}
+.block-list__link, .nav-list {
+  display: block;
+  padding: 12px;
+  margin: -12px; }
+
+/*------------------------------------*\
+    $BUTTONS
+\*------------------------------------*/
+/**
+ * Basic button structural styling. Extend in your theme stylesheet.
+ * 
+ * Demo: jsfiddle.net/inuitcss/RqHcp
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_buttons\.scss}line{font-family:\0000310}}
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  display: inline-block;
+  margin: 0;
+  line-height: 1;
+  /**
+   * Set padding in ems so we can change the size of a button by merely
+   * altering its `font-size`.
+   */
+  padding: 0.5em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_buttons\.scss}line{font-family:\0000323}}
+.btn,
+.btn:hover {
+  text-decoration: none; }
+
+/**
+ * Basic button modifiers
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_buttons\.scss}line{font-family:\0000331}}
+.btn--sml {
+  font-size: .75em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_buttons\.scss}line{font-family:\0000332}}
+.btn--lrg {
+  font-size: 1.50em; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/objects\/_buttons\.scss}line{font-family:\0000334}}
+.btn--full, .button {
+  display: block;
+  text-align: center;
+  /**
+   * The following is so that `.btn-full` works properly on `input`s as well
+   * as `a`s.
+   */
+  padding-right: 0;
+  padding-left: 0;
+  width: 100%; }
+
+/**
+ * Style trumps; helper and brand classes
+ */
+/*------------------------------------*\
+    $WIDTHS
+\*------------------------------------*/
+/**
+ * Sizes in human readable format. These are used in conjunction with other
+ * objects and abstractions found in inuit.css, most commonly the grid system
+ * and faux flexbox.
+ *
+ * We have a mixin to generate our widths and their breakpoint-specific
+ * variations.
+ */
+/**
+* Whole
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000317}}
+.one-whole {
+  width: 100%; }
+
+/**
+* Halves
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000323}}
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%; }
+
+/**
+* Thirds
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000329}}
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000330}}
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%; }
+
+/**
+* Quarters
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000336}}
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000338}}
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%; }
+
+/**
+* Fifths
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000344}}
+.one-fifth, .two-tenths {
+  width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000345}}
+.two-fifths, .four-tenths {
+  width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000346}}
+.three-fifths, .six-tenths {
+  width: 60%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000347}}
+.four-fifths, .eight-tenths {
+  width: 80%; }
+
+/**
+* Sixths
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000353}}
+.one-sixth, .two-twelfths {
+  width: 16.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000357}}
+.five-sixths, .ten-twelfths {
+  width: 83.333%; }
+
+/**
+* Eighths
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000363}}
+.one-eighth {
+  width: 12.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000365}}
+.three-eighths {
+  width: 37.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000367}}
+.five-eighths {
+  width: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000369}}
+.seven-eighths {
+  width: 87.5%; }
+
+/**
+* Tenths
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000375}}
+.one-tenth {
+  width: 10%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000377}}
+.three-tenths {
+  width: 30%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000381}}
+.seven-tenths {
+  width: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000383}}
+.nine-tenths {
+  width: 90%; }
+
+/**
+* Twelfths
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000389}}
+.one-twelfth {
+  width: 8.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000393}}
+.five-twelfths {
+  width: 41.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000395}}
+.seven-twelfths {
+  width: 58.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000399}}
+.eleven-twelfths {
+  width: 91.666%; }
+
+/**
+ * If you have set `$responsive` to ‘true’ in `_vars.scss` then you now have
+ * access to these classes. You can define at which breakpoing you’d like an
+ * element to be a certain size, e.g.:
+ *
+ * `<div class="g  one-quarter  lap-one-half  palm-one-whole"> ... </div>`
+ *
+ * This would create a `div` that, at ‘desktop’ sizes, takes up a quarter of the
+ * horizontal space, a half of that space at ‘tablet’ sizes, and goes full width
+ * at ‘mobile’ sizes.
+ *
+ * Demo: jsfiddle.net/inuitcss/WS4Ge
+ *
+ */
+@media only screen and (max-width: 480px) {
+  /**
+  * Whole
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000317}}
+  .palm-one-whole {
+    width: 100%; }
+
+  /**
+  * Halves
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000323}}
+  .palm-one-half, .palm-two-quarters, .palm-three-sixths, .palm-four-eighths, .palm-five-tenths, .palm-six-twelfths {
+    width: 50%; }
+
+  /**
+  * Thirds
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000329}}
+  .palm-one-third, .palm-two-sixths, .palm-four-twelfths {
+    width: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000330}}
+  .palm-two-thirds, .palm-four-sixths, .palm-eight-twelfths {
+    width: 66.666%; }
+
+  /**
+  * Quarters
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000336}}
+  .palm-one-quarter, .palm-two-eighths, .palm-three-twelfths {
+    width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000338}}
+  .palm-three-quarters, .palm-six-eighths, .palm-nine-twelfths {
+    width: 75%; }
+
+  /**
+  * Fifths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000344}}
+  .palm-one-fifth, .palm-two-tenths {
+    width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000345}}
+  .palm-two-fifths, .palm-four-tenths {
+    width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000346}}
+  .palm-three-fifths, .palm-six-tenths {
+    width: 60%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000347}}
+  .palm-four-fifths, .palm-eight-tenths {
+    width: 80%; }
+
+  /**
+  * Sixths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000353}}
+  .palm-one-sixth, .palm-two-twelfths {
+    width: 16.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000357}}
+  .palm-five-sixths, .palm-ten-twelfths {
+    width: 83.333%; }
+
+  /**
+  * Eighths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000363}}
+  .palm-one-eighth {
+    width: 12.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000365}}
+  .palm-three-eighths {
+    width: 37.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000367}}
+  .palm-five-eighths {
+    width: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000369}}
+  .palm-seven-eighths {
+    width: 87.5%; }
+
+  /**
+  * Tenths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000375}}
+  .palm-one-tenth {
+    width: 10%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000377}}
+  .palm-three-tenths {
+    width: 30%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000381}}
+  .palm-seven-tenths {
+    width: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000383}}
+  .palm-nine-tenths {
+    width: 90%; }
+
+  /**
+  * Twelfths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000389}}
+  .palm-one-twelfth {
+    width: 8.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000393}}
+  .palm-five-twelfths {
+    width: 41.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000395}}
+  .palm-seven-twelfths {
+    width: 58.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000399}}
+  .palm-eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+  /**
+  * Whole
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000317}}
+  .lap-one-whole {
+    width: 100%; }
+
+  /**
+  * Halves
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000323}}
+  .lap-one-half, .lap-two-quarters, .lap-three-sixths, .lap-four-eighths, .lap-five-tenths, .lap-six-twelfths {
+    width: 50%; }
+
+  /**
+  * Thirds
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000329}}
+  .lap-one-third, .lap-two-sixths, .lap-four-twelfths {
+    width: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000330}}
+  .lap-two-thirds, .lap-four-sixths, .lap-eight-twelfths {
+    width: 66.666%; }
+
+  /**
+  * Quarters
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000336}}
+  .lap-one-quarter, .lap-two-eighths, .lap-three-twelfths {
+    width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000338}}
+  .lap-three-quarters, .lap-six-eighths, .lap-nine-twelfths {
+    width: 75%; }
+
+  /**
+  * Fifths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000344}}
+  .lap-one-fifth, .lap-two-tenths {
+    width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000345}}
+  .lap-two-fifths, .lap-four-tenths {
+    width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000346}}
+  .lap-three-fifths, .lap-six-tenths {
+    width: 60%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000347}}
+  .lap-four-fifths, .lap-eight-tenths {
+    width: 80%; }
+
+  /**
+  * Sixths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000353}}
+  .lap-one-sixth, .lap-two-twelfths {
+    width: 16.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000357}}
+  .lap-five-sixths, .lap-ten-twelfths {
+    width: 83.333%; }
+
+  /**
+  * Eighths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000363}}
+  .lap-one-eighth {
+    width: 12.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000365}}
+  .lap-three-eighths {
+    width: 37.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000367}}
+  .lap-five-eighths {
+    width: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000369}}
+  .lap-seven-eighths {
+    width: 87.5%; }
+
+  /**
+  * Tenths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000375}}
+  .lap-one-tenth {
+    width: 10%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000377}}
+  .lap-three-tenths {
+    width: 30%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000381}}
+  .lap-seven-tenths {
+    width: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000383}}
+  .lap-nine-tenths {
+    width: 90%; }
+
+  /**
+  * Twelfths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000389}}
+  .lap-one-twelfth {
+    width: 8.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000393}}
+  .lap-five-twelfths {
+    width: 41.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000395}}
+  .lap-seven-twelfths {
+    width: 58.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000399}}
+  .lap-eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (max-width: 1023px) {
+  /**
+  * Whole
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000317}}
+  .portable-one-whole {
+    width: 100%; }
+
+  /**
+  * Halves
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000323}}
+  .portable-one-half, .portable-two-quarters, .portable-three-sixths, .portable-four-eighths, .portable-five-tenths, .portable-six-twelfths {
+    width: 50%; }
+
+  /**
+  * Thirds
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000329}}
+  .portable-one-third, .portable-two-sixths, .portable-four-twelfths {
+    width: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000330}}
+  .portable-two-thirds, .portable-four-sixths, .portable-eight-twelfths {
+    width: 66.666%; }
+
+  /**
+  * Quarters
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000336}}
+  .portable-one-quarter, .portable-two-eighths, .portable-three-twelfths {
+    width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000338}}
+  .portable-three-quarters, .portable-six-eighths, .portable-nine-twelfths {
+    width: 75%; }
+
+  /**
+  * Fifths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000344}}
+  .portable-one-fifth, .portable-two-tenths {
+    width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000345}}
+  .portable-two-fifths, .portable-four-tenths {
+    width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000346}}
+  .portable-three-fifths, .portable-six-tenths {
+    width: 60%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000347}}
+  .portable-four-fifths, .portable-eight-tenths {
+    width: 80%; }
+
+  /**
+  * Sixths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000353}}
+  .portable-one-sixth, .portable-two-twelfths {
+    width: 16.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000357}}
+  .portable-five-sixths, .portable-ten-twelfths {
+    width: 83.333%; }
+
+  /**
+  * Eighths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000363}}
+  .portable-one-eighth {
+    width: 12.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000365}}
+  .portable-three-eighths {
+    width: 37.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000367}}
+  .portable-five-eighths {
+    width: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000369}}
+  .portable-seven-eighths {
+    width: 87.5%; }
+
+  /**
+  * Tenths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000375}}
+  .portable-one-tenth {
+    width: 10%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000377}}
+  .portable-three-tenths {
+    width: 30%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000381}}
+  .portable-seven-tenths {
+    width: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000383}}
+  .portable-nine-tenths {
+    width: 90%; }
+
+  /**
+  * Twelfths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000389}}
+  .portable-one-twelfth {
+    width: 8.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000393}}
+  .portable-five-twelfths {
+    width: 41.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000395}}
+  .portable-seven-twelfths {
+    width: 58.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000399}}
+  .portable-eleven-twelfths {
+    width: 91.666%; } }
+@media only screen and (min-width: 1024px) {
+  /**
+  * Whole
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000317}}
+  .desk-one-whole {
+    width: 100%; }
+
+  /**
+  * Halves
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000323}}
+  .desk-one-half, .desk-two-quarters, .desk-three-sixths, .desk-four-eighths, .desk-five-tenths, .desk-six-twelfths {
+    width: 50%; }
+
+  /**
+  * Thirds
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000329}}
+  .desk-one-third, .desk-two-sixths, .desk-four-twelfths {
+    width: 33.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000330}}
+  .desk-two-thirds, .desk-four-sixths, .desk-eight-twelfths {
+    width: 66.666%; }
+
+  /**
+  * Quarters
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000336}}
+  .desk-one-quarter, .desk-two-eighths, .desk-three-twelfths {
+    width: 25%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000338}}
+  .desk-three-quarters, .desk-six-eighths, .desk-nine-twelfths {
+    width: 75%; }
+
+  /**
+  * Fifths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000344}}
+  .desk-one-fifth, .desk-two-tenths {
+    width: 20%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000345}}
+  .desk-two-fifths, .desk-four-tenths {
+    width: 40%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000346}}
+  .desk-three-fifths, .desk-six-tenths {
+    width: 60%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000347}}
+  .desk-four-fifths, .desk-eight-tenths {
+    width: 80%; }
+
+  /**
+  * Sixths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000353}}
+  .desk-one-sixth, .desk-two-twelfths {
+    width: 16.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000357}}
+  .desk-five-sixths, .desk-ten-twelfths {
+    width: 83.333%; }
+
+  /**
+  * Eighths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000363}}
+  .desk-one-eighth {
+    width: 12.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000365}}
+  .desk-three-eighths {
+    width: 37.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000367}}
+  .desk-five-eighths {
+    width: 62.5%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000369}}
+  .desk-seven-eighths {
+    width: 87.5%; }
+
+  /**
+  * Tenths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000375}}
+  .desk-one-tenth {
+    width: 10%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000377}}
+  .desk-three-tenths {
+    width: 30%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000381}}
+  .desk-seven-tenths {
+    width: 70%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000383}}
+  .desk-nine-tenths {
+    width: 90%; }
+
+  /**
+  * Twelfths
+  */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000389}}
+  .desk-one-twelfth {
+    width: 8.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000393}}
+  .desk-five-twelfths {
+    width: 41.666%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000395}}
+  .desk-seven-twelfths {
+    width: 58.333%; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_widths\.scss}line{font-family:\0000399}}
+  .desk-eleven-twelfths {
+    width: 91.666%; } }
+/**
+ * If you have set the additional `$responsive-extra` variable to ‘true’ in
+ * `_vars.scss` then you now have access to the following class available to
+ * accomodate much larger screen resolutions.
+ */
+/* endif */
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * `.brand` is a quick and simple way to apply your brand face and/or color to
+ * any element using a handy helper class.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_brand\.scss}line{font-family:\000038}}
+.brand {
+  font-family: "ff-tisa-web-pro", serif!important;
+  color: #041649!important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_brand\.scss}line{font-family:\0000312}}
+.brand-face {
+  font-family: "ff-tisa-web-pro", serif!important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_brand\.scss}line{font-family:\0000315}}
+.brand-color,
+.brand-colour {
+  color: #041649!important; }
+
+/*------------------------------------*\
+    $HELPER
+\*------------------------------------*/
+/**
+ * A series of helper classes to use arbitrarily. Only use a helper class if an
+ * element/component doesn’t already have a class to which you could apply this
+ * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
+ * that ruleset as opposed to adding the `.float--left` class to the markup.
+ *
+ * A lot of these classes carry `!important` as you will always want them to win
+ * out over other selectors.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000313}}
+.float--right {
+  float: right !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000314}}
+.float--left {
+  float: left !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000316}}
+.text--left {
+  text-align: left  !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000317}}
+.text--center {
+  text-align: center !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000318}}
+.text--right {
+  text-align: right !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000320}}
+.flush {
+  margin: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000321}}
+.flush--top {
+  margin-top: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000322}}
+.flush--right {
+  margin-right: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000323}}
+.flush--bottom {
+  margin-bottom: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000324}}
+.flush--left {
+  margin-left: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000325}}
+.flush--ends {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000326}}
+.flush--sides {
+  margin-right: 0 !important;
+  margin-left: 0 !important; }
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000332}}
+.full-bleed {
+  margin-right: -24px !important;
+  margin-left: -24px !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000336}}
+  .islet .full-bleed {
+    margin-right: -12px !important;
+    margin-left: -12px !important; }
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000347}}
+.informative {
+  cursor: help; }
+
+/**
+ * Mute an object by reducing its opacity.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000355}}
+.muted {
+  opacity: 0.5;
+  filter: alpha(opacity=50); }
+
+/**
+ * Align items to the right where they imply progression/movement forward, e.g.:
+ * 
+   <p class=proceed><a href=#>Read more...</a></p>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000367}}
+.proceed {
+  text-align: right; }
+
+/**
+ * Add a right-angled quote to links that imply movement, e.g.:
+ * 
+   <a href=# class=go>Read more</a>
+ * 
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000378}}
+.go:after {
+  content: " »"; }
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000386}}
+.caps {
+  text-transform: uppercase; }
+
+/**
+ * Hide content off-screen without resorting to `display:none;`
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000394}}
+.accessibility {
+  position: absolute;
+  left: -99999px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\0000395}}
+[dir=rtl] .accessibility {
+  left: auto;
+  right: -99999px; }
+
+/**
+ * Hide content based on breakpoint
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\00003101}}
+.hide {
+  position: absolute;
+  left: -9999px; }
+
+@media only screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\00003107}}
+  .hide--palm {
+    position: absolute;
+    left: -9999px; } }
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\00003107}}
+  .hide--lap {
+    position: absolute;
+    left: -9999px; } }
+@media only screen and (max-width: 1023px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\00003107}}
+  .hide--portable {
+    position: absolute;
+    left: -9999px; } }
+@media only screen and (min-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/generic\/_helper\.scss}line{font-family:\00003107}}
+  .hide--desk {
+    position: absolute;
+    left: -9999px; } }
+/**
+* Custom styles
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\000031}}
+html, body {
+  height: 100%;
+  background: #dddddd; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\000036}}
+body {
+  overflow-x: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000310}}
+p, a, span {
+  font-family: "ff-tisa-web-pro", serif; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000314}}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "proxima-nova", sans-serif; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000318}}
+ul {
+  list-style-type: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000322}}
+a {
+  color: #a69e00; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000326}}
+.container {
+  max-width: 1440px;
+  margin: 0 auto; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000331}}
+.nav-list {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: bold;
+  color: #a69e00; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000338}}
+.masthead {
+  width: 100%;
+  height: 650px;
+  background: url("../img/header_bg.png") center no-repeat;
+  padding: 72px 0; }
+  @media only screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000338}}
+    .masthead {
+      background: url("../img/header_bg_palm.png") center no-repeat; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000346}}
+  .masthead > hgroup {
+    margin-bottom: 72px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000351}}
+.header-box {
+  background-color: rgba(4, 22, 73, 0.75);
+  font-family: "proxima-nova", sans-serif;
+  color: #a69e00;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000360}}
+.club {
+  margin: 48px 0;
+  padding: 24px 0;
+  background: white;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000367}}
+.content {
+  padding: 24px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000371}}
+.header-color {
+  color: #a69e00;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000376}}
+.icons > a {
+  font-size: 2rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\0000380}}
+.alternate {
+  background: #dddddd; }
+
+/*.button {
+  @extend .btn--full;
+  background: lighten($brand-color, 10%);
+  //border-bottom: $brand-color solid 6px;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #404853;
+  color: $secondary;
+  font-weight: 100;
+  letter-spacing: 0.2rem;
+  transition: all .1s linear;
+  //text-transform: uppercase;
+  font-family: "proxima-nova", sans-serif;
+  padding: $half-spacing-unit;
+  @include vendor(border-radius, 5px);
+  &:active {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #404853;
+    transform: translateY(3px);
+  }
+}
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003107}}
+.button {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #072579;
+  -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #072579;
+  -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #072579;
+  -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #072579;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #072579;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+  background: #041649;
+  border: 0;
+  font-weight: bold;
+  margin-bottom: 25px;
+  padding: 12px 20px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  text-transform: uppercase; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003119}}
+  .button:active {
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #072579;
+    -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #072579;
+    -ms-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #072579;
+    -o-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #072579;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #072579;
+    -webkit-transform: translateY(3px);
+    -moz-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    -o-transform: translateY(3px);
+    transform: translateY(3px); }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003125}}
+.bestof {
+  background-color: #dddddd;
+  color: #a69e00;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003132}}
+.header {
+  -webkit-animation: fadeintext 1s;
+  -moz-animation: fadeintext 1s;
+  -ms-animation: fadeintext 1s;
+  -o-animation: fadeintext 1s;
+  animation: fadeintext 1s; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003135}}
+.header-list {
+  -webkit-animation: fadeintext 2s;
+  -moz-animation: fadeintext 2s;
+  -ms-animation: fadeintext 2s;
+  -o-animation: fadeintext 2s;
+  animation: fadeintext 2s; }
+
+@-webkit-keyframes fadeintext {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-moz-keyframes fadeintext {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-ms-keyframes fadeintext {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+
+@-o-keyframes fadeintext {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes fadeintext {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    -o-transform: translateY(30px);
+    transform: translateY(30px); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+    transform: translateY(0); } }
+
+/* Flexible iFrame */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003155}}
+.Flexible-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_homepage\.scss}line{font-family:\00003163}}
+.Flexible-container iframe,
+.Flexible-container object,
+.Flexible-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-FONTNAME.css" rel="stylesheet" />
+*/
+@font-face {
+  font-family: "SSSocial";
+  src: url("../webfonts/ss-social-regular.eot");
+  src: url("../webfonts/ss-social-regular.eot?#iefix") format("embedded-opentype"), url("../webfonts/ss-social-regular.woff") format("woff"), url("../webfonts/ss-social-regular.ttf") format("truetype"), url("../webfonts/ss-social-regular.svg#SSSocialRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000325}}
+html:hover [class^="ss-"] {
+  -ms-zoom: 1; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000327}}
+.ss-icon, .ss-icon.ss-social, .ss-icon.ss-social-circle,
+[class^="ss-"]:before, [class*=" ss-"]:before,
+[class^="ss-"][class*=" ss-social"]:before, [class*=" ss-"][class*=" ss-social"]:before,
+[class^="ss-"].right:after, [class*=" ss-"].right:after,
+[class^="ss-"][class*=" ss-social"].right:after, [class*=" ss-"][class*=" ss-social"].right:after {
+  font-family: "SSSocial";
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-rendering: optimizeLegibility;
+  white-space: nowrap;
+  /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000347}}
+.ss-icon.ss-social-circle,
+[class^="ss-"].ss-social-circle:before, [class*=" ss-"].ss-social-circle:before,
+[class^="ss-"].ss-social-circle.right:after, [class*=" ss-"].ss-social-circle.right:after {
+  font-weight: bold; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000353}}
+[class^="ss-"].right:before,
+[class*=" ss-"].right:before {
+  display: none;
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-facebook:before, .ss-facebook.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-twitter:before, .ss-twitter.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-linkedin:before, .ss-linkedin.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-googleplus:before, .ss-googleplus.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-appdotnet:before, .ss-appdotnet.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-zerply:before, .ss-zerply.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-reddit:before, .ss-reddit.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-tumblr:before, .ss-tumblr.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-wordpress:before, .ss-wordpress.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-blogger:before, .ss-blogger.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-posterous:before, .ss-posterous.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-youtube:before, .ss-youtube.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-vimeo:before, .ss-vimeo.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-flickr:before, .ss-flickr.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-instagram:before, .ss-instagram.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-fivehundredpx:before, .ss-fivehundredpx.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-pinterest:before, .ss-pinterest.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-svpply:before, .ss-svpply.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-readmill:before, .ss-readmill.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-dropbox:before, .ss-dropbox.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-pinboard:before, .ss-pinboard.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-dribbble:before, .ss-dribbble.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-behance:before, .ss-behance.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-github:before, .ss-github.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-octocat:before, .ss-octocat.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-stackoverflow:before, .ss-stackoverflow.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-paypal:before, .ss-paypal.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-kickstarter:before, .ss-kickstarter.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-foursquare:before, .ss-foursquare.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-yelp:before, .ss-yelp.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-skype:before, .ss-skype.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-rdio:before, .ss-rdio.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-spotify:before, .ss-spotify.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-lastfm:before, .ss-lastfm.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-soundcloud:before, .ss-soundcloud.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-mail:before, .ss-mail.right:after {
+  content: '✉'; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-like:before, .ss-like.right:after {
+  content: '👍'; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-rss:before, .ss-rss.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-share:before, .ss-share.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-apple:before, .ss-apple.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-microsoft:before, .ss-microsoft.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-windows:before, .ss-windows.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-android:before, .ss-android.right:after {
+  content: ''; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/inuit\.css\/ui\/_icons\.scss}line{font-family:\0000356}}
+.ss-blackberry:before, .ss-blackberry.right:after {
+  content: ''; }
+
+/*
+* Symbolset
+* www.symbolset.com
+* Copyright © 2012 Oak Studios LLC
+*
+* Upload this file to your web server
+* and place this within your <head> tags.
+* <link href="webfonts/ss-standard.css" rel="stylesheet" />
+*/
+/* Legacy classes */
+/**
+ * She’s all yours, cap’n... Begin importing your stuff here.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/patrickmorris\/Dropbox\/SailOB\/SailOB\/css\/style\.scss}line{font-family:\0000324}}
+.container {
+  width: 100%; }
+
+/*@ sourceMappingURL=style.css.map */
