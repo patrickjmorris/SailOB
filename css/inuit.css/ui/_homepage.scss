@@ -5,6 +5,7 @@ html, body {
 
 body {
   overflow-x: hidden;
+  color: $grey;
 }
 
 p, a, span {
@@ -39,12 +40,12 @@ a {
   width: 100%;
   height: 650px;
   background: url('../img/header_bg.png') center no-repeat;
-  padding: ($base-spacing-unit * 3) 0;
+  padding: ($base-spacing-unit * 2) 0;
   @include media-query(palm){ 
     background: url('../img/header_bg_palm.png') center no-repeat; }
   //margin-bottom: $base-spacing-unit * 3;
   > hgroup {
-    margin-bottom: $base-spacing-unit * 3;
+    margin-bottom: $base-spacing-unit * 2;
   }
 }
 
@@ -58,7 +59,7 @@ a {
 }
 
 .club {
-  margin: $base-spacing-unit*2 0;
+  margin: $base-spacing-unit*2 $half-spacing-unit;
   padding: $base-spacing-unit 0;
   background: white;
   @include vendor(border-radius, 5px);
@@ -66,11 +67,13 @@ a {
 
 .content {
   padding: $base-spacing-unit;
+  @include media-query(palm){
+    padding: $half-spacing-unit;
+  }
 }
 
 .header-color {
   color: $secondary;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .icons > a {
@@ -81,29 +84,7 @@ a {
   background: $light-grey;
 }
 
-/*.button {
-  @extend .btn--full;
-  background: lighten($brand-color, 10%);
-  //border-bottom: $brand-color solid 6px;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 5px 0 #404853;
-  color: $secondary;
-  font-weight: 100;
-  letter-spacing: 0.2rem;
-  transition: all .1s linear;
-  //text-transform: uppercase;
-  font-family: "proxima-nova", sans-serif;
-  padding: $half-spacing-unit;
-  @include vendor(border-radius, 5px);
-  &:active {
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15), 0 2px 0 #404853;
-    transform: translateY(3px);
-  }
-}
-*/
-
-
+/*
 .button{ 
   @extend .btn--full;
   @include vendor(border-radius, 5px);
@@ -121,15 +102,35 @@ a {
     @include vendor(transform, translateY(3px));
   }
 }
+*/
+
+.button {
+  @extend .btn--full;
+  @include vendor(border-radius, 5px);
+  background: none;
+  border: 3px $brand-color solid;
+  color: $brand-color;
+  font-weight:bold;
+  margin-bottom:25px;
+  padding:12px 20px;
+  &:hover {
+    background: $brand-color;
+    color: $secondary;
+    text-decoration: none;
+    border: 3px #fff solid;
+  }
+}
 
 .bestof {
-  background-color: $light-grey;
+  background-color: $brand-color;
   color: $secondary;
   @include vendor(border-radius, 5px);
 }
 
 // animations for header
-.header { @include vendor(animation, fadeintext 1s);
+.header { 
+  @include vendor(animation, fadeintext 1s);
+  width: 100%;
 }
    
 .header-list{ @include vendor(animation, fadeintext 2s);
